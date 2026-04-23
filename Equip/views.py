@@ -83,7 +83,11 @@ def contact_page(request):
 # REMOVE THIS AFTER FIRST USE FOR SECURITY
 def create_admin(request):
     User = get_user_model()
-    if not User.objects.filter(username='admin').exists():
+    user = User.objects.filter(username='admin').first()
+    if user:
+        user.set_password('admin123')
+        user.save()
+        return HttpResponse('Admin password reset')
+    else:
         User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
         return HttpResponse('Admin created')
-    return HttpResponse('Admin already exists')
