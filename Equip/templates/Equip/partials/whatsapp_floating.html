@@ -1,0 +1,55 @@
+<!-- Floating WhatsApp Button -->
+<div class="position-fixed bottom-0 end-0 p-4" style="z-index: 1050;">
+    <div class="position-relative">
+        <!-- Tooltip Bubble -->
+        <div class="whatsapp-tooltip position-absolute top-50 translate-middle-y end-100 bg-white text-dark shadow-sm px-3 py-2 rounded-pill fw-semibold me-3 text-nowrap" style="font-size: 0.9rem;">
+            Chat with us! <span class="d-inline-block ms-1">👋</span>
+            <div class="position-absolute top-50 start-100 translate-middle-y" style="width: 0; height: 0; border-top: 6px solid transparent; border-bottom: 6px solid transparent; border-left: 6px solid white;"></div>
+        </div>
+        
+        <!-- Button -->
+        <a href="https://wa.me/919328090749?text=Hello%2C%20I%20have%20an%20inquiry%20about%20your%20products." 
+           target="_blank" 
+           class="whatsapp-btn btn rounded-circle shadow-lg d-flex align-items-center justify-content-center text-white" 
+           style="width: 65px; height: 65px; background-color: #25D366; border: none;">
+            <i class="bi bi-whatsapp fs-2"></i>
+        </a>
+    </div>
+</div>
+
+<style>
+    .whatsapp-btn {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+        animation: pulse-whatsapp 2s infinite;
+    }
+    
+    .whatsapp-btn:hover {
+        transform: scale(1.1);
+        background-color: #1ebe57 !important;
+        animation: none;
+    }
+
+    .whatsapp-tooltip {
+        opacity: 0;
+        transform: translateY(-50%) translateX(10px) !important;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+    }
+
+    .position-relative:hover .whatsapp-tooltip {
+        opacity: 1;
+        transform: translateY(-50%) translateX(0) !important;
+    }
+
+    @keyframes pulse-whatsapp {
+        0% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+        }
+        70% {
+            box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+        }
+    }
+</style>

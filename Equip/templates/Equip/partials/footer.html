@@ -1,0 +1,82 @@
+<!-- Footer -->
+<footer id="footer" class="pt-5 pb-4 mt-auto bg-body-tertiary text-body-secondary position-relative overflow-hidden">
+    <!-- Decorative top border -->
+    <div class="position-absolute top-0 start-0 w-100" style="height: 4px; background: linear-gradient(90deg, var(--brand-primary), #20c997);"></div>
+    
+    <div class="container" data-aos="fade-up" data-aos-duration="800">
+        <div class="row g-4 mb-4 pb-4 border-bottom border-secondary border-opacity-25">
+            <!-- Company Info -->
+            <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
+                <a class="d-flex align-items-center gap-2 text-decoration-none mb-3" href="{% url 'home' %}" style="font-weight: 800; color: var(--brand-primary) !important; font-size: 1.5rem;">
+                    <i class="bi bi-heart-pulse-fill text-primary"></i> PhysioEquip
+                </a>
+                <p class="mb-4 pe-lg-4 text-muted">Premium medical and rehabilitation equipment for modern physiotherapy clinics and professionals. Enhancing patient care with reliable technology.</p>
+                <div class="d-flex gap-3">
+                    <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center justify-content-center hover-lift" style="width: 36px; height: 36px;"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center justify-content-center hover-lift" style="width: 36px; height: 36px;"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center justify-content-center hover-lift" style="width: 36px; height: 36px;"><i class="bi bi-instagram"></i></a>
+                    <a href="#" class="btn btn-outline-secondary btn-sm rounded-circle d-flex align-items-center justify-content-center hover-lift" style="width: 36px; height: 36px;"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-lg-2 col-md-6 mb-4 mb-lg-0">
+                <h5 class="fw-bold mb-3 text-body">Quick Links</h5>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="{% url 'home' %}" class="text-decoration-none text-muted hover-medical d-inline-block transition-transform" style="transition: transform 0.2s;"><i class="bi bi-chevron-right small me-1"></i> Home</a></li>
+                    <li class="mb-2"><a href="{% url 'product_list' %}" class="text-decoration-none text-muted hover-medical d-inline-block transition-transform" style="transition: transform 0.2s;"><i class="bi bi-chevron-right small me-1"></i> Products</a></li>
+                    <li class="mb-2"><a href="{% url 'home' %}#categories" class="text-decoration-none text-muted hover-medical d-inline-block transition-transform" style="transition: transform 0.2s;"><i class="bi bi-chevron-right small me-1"></i> Categories</a></li>
+                    <li class="mb-2"><a href="{% url 'contact_page' %}" class="text-decoration-none text-muted hover-medical d-inline-block transition-transform" style="transition: transform 0.2s;"><i class="bi bi-chevron-right small me-1"></i> Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Support -->
+            <div class="col-lg-3 col-md-6 mb-4 mb-lg-0">
+                <h5 class="fw-bold mb-3 text-body">Support</h5>
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-2"><a href="{% url 'support_page' %}" class="text-decoration-none text-muted hover-medical"><i class="bi bi-question-circle small me-1"></i> FAQ</a></li>
+                    <li class="mb-2"><a href="{% url 'support_page' %}" class="text-decoration-none text-muted hover-medical"><i class="bi bi-shield-check small me-1"></i> Warranty Policy</a></li>
+                    <li class="mb-2"><a href="{% url 'support_page' %}" class="text-decoration-none text-muted hover-medical"><i class="bi bi-truck small me-1"></i> Shipping Info</a></li>
+                    <li class="mb-2"><a href="{% url 'support_page' %}" class="text-decoration-none text-muted hover-medical"><i class="bi bi-file-earmark-text small me-1"></i> Terms & Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div class="col-lg-3 col-md-6">
+                <h5 class="fw-bold mb-3 text-body">Contact Us</h5>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-3 d-flex align-items-start gap-3">
+                        <i class="bi bi-geo-alt-fill text-primary mt-1"></i>
+                        <span class="text-muted">123 Health Avenue, Medical District, City 45678</span>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center gap-3">
+                        <i class="bi bi-envelope-fill text-primary"></i>
+                        <a href="mailto:info@physioequip.com" class="text-decoration-none text-muted hover-medical">info@physioequip.com</a>
+                    </li>
+                    <li class="mb-3 d-flex align-items-center gap-3">
+                        <i class="bi bi-telephone-fill text-primary"></i>
+                        <span class="text-muted">+1 (555) 123-4567</span>
+                    </li>
+                </ul>
+                <a href="https://wa.me/919328090749" target="_blank" class="btn btn-success rounded-pill px-4 fw-bold shadow-sm hover-lift d-inline-flex align-items-center gap-2" style="background-color: #25D366; border-color: #25D366;">
+                    <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+        </div>
+
+        <div class="row text-center text-md-start">
+            <div class="col-md-6 mb-2 mb-md-0">
+                <p class="mb-0 small fw-medium">&copy; {% now "Y" %} PhysioEquip Catalog. All rights reserved.</p>
+            </div>
+            <div class="col-md-6 text-md-end">
+                <p class="mb-0 small text-muted">Designed for Professionals</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .transition-transform:hover {
+        transform: translateX(5px);
+    }
+</style>

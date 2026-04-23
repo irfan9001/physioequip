@@ -1,0 +1,127 @@
+{% extends 'Equip/base.html' %}
+
+{% block title %}Support & Policies - PhysioEquip{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="bg-primary bg-opacity-10 py-5 mb-5 mt-n5 border-bottom border-primary border-opacity-10" data-aos="fade-down">
+    <div class="container py-4 text-center">
+        <h1 class="display-5 fw-bold text-primary mb-3">Support & Policies</h1>
+        <p class="lead text-muted max-w-2xl mx-auto">Everything you need to know about our products, warranty, shipping, and terms of service.</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- Navigation Sidebar -->
+        <div class="col-lg-3 mb-5" data-aos="fade-right" data-aos-delay="100">
+            <div class="card rounded-4 p-4 sticky-top shadow-sm border-0" style="top: 100px;">
+                <div class="nav flex-column nav-pills gap-2" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button class="nav-link text-start active fw-medium py-3 px-4 rounded-3 d-flex align-items-center gap-2" id="v-pills-faq-tab" data-bs-toggle="pill" data-bs-target="#v-pills-faq" type="button" role="tab" aria-selected="true">
+                        <i class="bi bi-question-circle"></i> Frequently Asked Questions
+                    </button>
+                    <button class="nav-link text-start fw-medium py-3 px-4 rounded-3 d-flex align-items-center gap-2" id="v-pills-warranty-tab" data-bs-toggle="pill" data-bs-target="#v-pills-warranty" type="button" role="tab" aria-selected="false">
+                        <i class="bi bi-shield-check"></i> Warranty Policy
+                    </button>
+                    <button class="nav-link text-start fw-medium py-3 px-4 rounded-3 d-flex align-items-center gap-2" id="v-pills-shipping-tab" data-bs-toggle="pill" data-bs-target="#v-pills-shipping" type="button" role="tab" aria-selected="false">
+                        <i class="bi bi-truck"></i> Shipping Information
+                    </button>
+                    <button class="nav-link text-start fw-medium py-3 px-4 rounded-3 d-flex align-items-center gap-2" id="v-pills-terms-tab" data-bs-toggle="pill" data-bs-target="#v-pills-terms" type="button" role="tab" aria-selected="false">
+                        <i class="bi bi-file-earmark-text"></i> Terms & Conditions
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Content Area -->
+        <div class="col-lg-9" data-aos="fade-up">
+            <div class="card border-0 shadow-sm rounded-4 overflow-hidden">
+                <div class="card-body p-4 p-lg-5 bg-white">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        
+                        <!-- FAQs -->
+                        <div class="tab-pane fade show active" id="v-pills-faq" role="tabpanel" aria-labelledby="v-pills-faq-tab">
+                            <h2 class="fw-bold mb-4 d-flex align-items-center gap-2 text-body">
+                                <i class="bi bi-question-circle text-primary"></i> Frequently Asked Questions
+                            </h2>
+                            {% if faqs %}
+                            <div class="accordion" id="faqAccordion">
+                                {% for faq in faqs %}
+                                <div class="accordion-item border-0 mb-3 bg-light rounded-4 overflow-hidden">
+                                    <h2 class="accordion-header" id="heading{{ faq.id }}">
+                                        <button class="accordion-button collapsed fw-semibold bg-light text-body border-0 shadow-none px-4 py-3" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ faq.id }}" aria-expanded="false" aria-controls="collapse{{ faq.id }}">
+                                            {{ faq.question }}
+                                        </button>
+                                    </h2>
+                                    <div id="collapse{{ faq.id }}" class="accordion-collapse collapse" aria-labelledby="heading{{ faq.id }}" data-bs-parent="#faqAccordion">
+                                        <div class="accordion-body text-muted px-4 py-3 border-top border-secondary border-opacity-10">
+                                            {{ faq.answer|linebreaks }}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            </div>
+                            {% else %}
+                            <p class="text-muted">No FAQs available at the moment.</p>
+                            {% endif %}
+                        </div>
+
+                        <!-- Warranty -->
+                        <div class="tab-pane fade" id="v-pills-warranty" role="tabpanel" aria-labelledby="v-pills-warranty-tab">
+                            <h2 class="fw-bold mb-4 d-flex align-items-center gap-2 text-body">
+                                <i class="bi bi-shield-check text-primary"></i> Warranty Policy
+                            </h2>
+                            <div class="text-muted lh-lg spec-content">
+                                {% if support_content and support_content.warranty_policy %}
+                                    {{ support_content.warranty_policy|safe }}
+                                {% else %}
+                                    <p>Our warranty policy is currently being updated.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Shipping -->
+                        <div class="tab-pane fade" id="v-pills-shipping" role="tabpanel" aria-labelledby="v-pills-shipping-tab">
+                            <h2 class="fw-bold mb-4 d-flex align-items-center gap-2 text-body">
+                                <i class="bi bi-truck text-primary"></i> Shipping Information
+                            </h2>
+                            <div class="text-muted lh-lg spec-content">
+                                {% if support_content and support_content.shipping_info %}
+                                    {{ support_content.shipping_info|safe }}
+                                {% else %}
+                                    <p>Our shipping information is currently being updated.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                        <!-- Terms -->
+                        <div class="tab-pane fade" id="v-pills-terms" role="tabpanel" aria-labelledby="v-pills-terms-tab">
+                            <h2 class="fw-bold mb-4 d-flex align-items-center gap-2 text-body">
+                                <i class="bi bi-file-earmark-text text-primary"></i> Terms & Conditions
+                            </h2>
+                            <div class="text-muted lh-lg spec-content">
+                                {% if support_content and support_content.terms_conditions %}
+                                    {{ support_content.terms_conditions|safe }}
+                                {% else %}
+                                    <p>Our terms and conditions are currently being updated.</p>
+                                {% endif %}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .max-w-2xl { max-width: 42rem; }
+    .mt-n5 { margin-top: -3rem; }
+    .nav-pills .nav-link { transition: all 0.3s ease; color: var(--bs-body-color); }
+    .nav-pills .nav-link:hover { background-color: rgba(60, 56, 84, 0.05); }
+    .nav-pills .nav-link.active { background-color: var(--medical-blue); color: white !important; }
+    .spec-content p { margin-bottom: 1rem; }
+    .accordion-button:not(.collapsed)::after { filter: invert(1); }
+</style>
+{% endblock %}
