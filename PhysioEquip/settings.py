@@ -27,6 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-ifhcwow0!fh5lkbm08g%u
 DEBUG = False
 
 ALLOWED_HOSTS = ['*']  # later you can restrict
+CSRF_TRUSTED_ORIGINS = ['https://*.onrender.com']
 
 
 # Application definition
