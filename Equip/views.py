@@ -86,6 +86,8 @@ def create_admin(request):
     user = User.objects.filter(username='admin').first()
     if user:
         user.set_password('admin123')
+        user.is_staff = True
+        user.is_superuser = True
         user.save()
         return HttpResponse('Admin password reset')
     else:
