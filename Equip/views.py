@@ -1,6 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product, HeroSlide
 from urllib.parse import quote
+from django.contrib.auth import get_user_model
+from django.http import HttpResponse
 
 # Phone number for WhatsApp inquiries
 WHATSAPP_NUMBER = "+919328090749"
@@ -77,3 +79,11 @@ def contact_page(request):
         'contact_content': contact_content,
         'form': form
     })
+
+# REMOVE THIS AFTER FIRST USE FOR SECURITY
+def create_admin(request):
+    User = get_user_model()
+    if not User.objects.filter(username='admin').exists():
+        User.objects.create_superuser('admin', 'admin@example.com', 'admin123')
+        return HttpResponse('Admin created')
+    return HttpResponse('Admin already exists')
